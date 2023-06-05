@@ -178,7 +178,7 @@ footer {
  -- begin own styles --
 */
 
-.appWrapper {
+.flexDirectionCol {
   display: flex;
   flex-direction: column;
 }
@@ -217,6 +217,17 @@ footer {
   display: flex;
   align-items: baseline;
   justify-content: center;
+}
+
+.justifyContentSpaceEvenly {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.marginH20 {
+  margin-left: 20%;
+  margin-right: 20%;
 }
 /*
  -- end own styles --

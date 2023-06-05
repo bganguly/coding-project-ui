@@ -1,10 +1,10 @@
 import React from 'react';
 import Controls from './Controls';
 
-const ControlsContainer = () => {
+const ControlsContainer = ({thumbnailArray, handlePreviousBtn, handleNextBtn}) => {
   return  (
     <div className='controlsContainer alignItemsBaseline'>
-      <Controls />
+      <Controls thumbnailArray={thumbnailArray} handlePreviousBtn={handlePreviousBtn} handleNextBtn ={handleNextBtn}/>
     </ div>
   )
 }
