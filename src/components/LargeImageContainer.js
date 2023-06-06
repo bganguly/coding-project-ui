@@ -1,10 +1,12 @@
 import React from 'react';
 import LargeImage from './LargeImage';
+import LargeImageMetadata from './LargeImageMetadata';
 
-const LargeImageContainer = () => {
+const LargeImageContainer = ({largeImageToShow}) => {
   return  (
     <div className='largeImageContainer alignItemsCenter'>
-      <LargeImage />
+      <LargeImage largeImageToShow={largeImageToShow}/>
+      <LargeImageMetadata largeImageToShow={largeImageToShow}/>
     </ div>
   )
 }

@@ -5,50 +5,44 @@ import ControlsContainer from './ControlsContainer';
 import ThumbnailImageContainer from './ThumbnailImageContainer';
 import { useState } from 'react';
 
-
 const App = () => {
-  const thumbnailArray = ['7111-m','7112-m','7118-m','7124-m','7130-m'];
   const numberOfThumbNails = 4;
+  const largeImageArray = ['7111-b','7112-b','7118-b','7124-b','7130-b'];
+  const [largeImageToShow, SetLargeImageToShow]  = useState(largeImageArray[0]);
+  const thumbnailArray = ['7111-m','7112-m','7118-m','7124-m','7130-m'];
   const [thumbNailsToShow, SetThumbNailsToShow]  = useState(thumbnailArray);
   const [indexOfFirstThumbnail, SetIndexOfFirstThumbnail] = useState(0);
+  const [highlightedItem, SetHighlightedItem] = useState(thumbnailArray[0]);
 
-  const handlePreviousBtn = thumbnailArray => {
-    // console.log('inside prev', indexOfFirstThumbnail, numberOfThumbNails)
-    if (indexOfFirstThumbnail >= numberOfThumbNails) {
-      // SetIndexOfFirstThumbnail(indexOfFirstThumbnail - numberOfThumbNails);
-      const randomNum = Math.ceil(Math.random() * 5);
-      SetIndexOfFirstThumbnail(randomNum,);
-      // console.log(indexOfFirstThumbnail)
-      const prevThumbnails = [...thumbnailArray.slice(indexOfFirstThumbnail, indexOfFirstThumbnail + numberOfThumbNails)];
-      console.log('inside prev', indexOfFirstThumbnail, numberOfThumbNails)
+  const handlePreviousBtnClick = () => {
+    let prevIndex = indexOfFirstThumbnail;
+    if (prevIndex >= numberOfThumbNails) {
+      SetIndexOfFirstThumbnail(indexOfFirstThumbnail - numberOfThumbNails);
+      const prevThumbnails = [...thumbnailArray.slice(prevIndex - numberOfThumbNails, prevIndex)];
       SetThumbNailsToShow(prevThumbnails);  
-      console.log(prevThumbnails)
     }
   }
 
-  const handleNextBtn = thumbnailArray => {
-    const currentIndex = indexOfFirstThumbnail;
-    if (indexOfFirstThumbnail < thumbnailArray.length) {
-      console.log('inside next', indexOfFirstThumbnail)
-      // SetIndexOfFirstThumbnail( 4 + currentIndex);
-      const randomNum = Math.ceil(Math.random() * 4);
-      SetIndexOfFirstThumbnail(randomNum);
-      // console.log(indexOfFirstThumbnail)
-
-      console.log('indexOfFirstThumbnail: ', indexOfFirstThumbnail)
-      const nextThumbnails = [...thumbnailArray.slice(indexOfFirstThumbnail, indexOfFirstThumbnail + numberOfThumbNails)];
+  const handleNextBtnClick = () => {
+    let nextIndex = indexOfFirstThumbnail + numberOfThumbNails;
+    if (nextIndex < thumbnailArray.length) {
+      SetIndexOfFirstThumbnail( indexOfFirstThumbnail + numberOfThumbNails);
+      const nextThumbnails = [...thumbnailArray].slice(nextIndex,  nextIndex + numberOfThumbNails);
       SetThumbNailsToShow(nextThumbnails);  
-      console.log('nextThumbnails :', nextThumbnails)
     }
   }
 
+  const handleThumbnailClick = (thumbnailToShow) => {
+    SetHighlightedItem(thumbnailToShow);
+    SetLargeImageToShow(thumbnailToShow.replace('m','b'));
+  }
 
   return  (
     <div className='flexDirectionCol'>
       <TitleContainer />
-      <LargeImageContainer />
-      <ControlsContainer  thumbnailArray={thumbnailArray} handlePreviousBtn={handlePreviousBtn} handleNextBtn ={handleNextBtn}/>
-      <ThumbnailImageContainer thumbNailsToShow={thumbNailsToShow} numberOfThumbNails={numberOfThumbNails} />
+      <LargeImageContainer largeImageToShow={largeImageToShow}/>
+      <ControlsContainer handlePreviousBtnClick={handlePreviousBtnClick} handleNextBtnClick ={handleNextBtnClick}/>
+      <ThumbnailImageContainer highlightedItem={highlightedItem} handleThumbnailClick={handleThumbnailClick} thumbNailsToShow={[...thumbNailsToShow]} numberOfThumbNails={numberOfThumbNails} />
     </ div>
   )
 }

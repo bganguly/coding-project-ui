@@ -1,9 +1,9 @@
 import React from 'react';
 
-import b_7111 from '../images/large/7111-b.jpg';
-
-const LargeImage = () => {
-  return <img src={b_7111} width='430' height='360' alt="template large" />;
+const LargeImage = ({largeImageToShow}) => {
+  return  ( 
+    <img src={require(`../images/large/${largeImageToShow}.jpg`)} width='430' height='360' alt="template large" className='largeImage' />
+  )
 }
 
 export default LargeImage

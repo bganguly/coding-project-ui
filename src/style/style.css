@@ -193,6 +193,16 @@ footer {
   margin: 1vh;
 }
 
+.largeImageContainer.alignItemsCenter .largeImage{
+  flex-basis: 40vw;
+  margin: 1vw;
+}
+
+.largeImageContainer.alignItemsCenter  .imageMetadata{
+  flex-basis: 16vw;
+  margin: 1vw;
+}
+
 .controlsContainer {
   flex-basis: 14vh;
   margin: 1vh;
@@ -204,7 +214,7 @@ footer {
 
 .thumbnailImageContainer {
   flex-basis: 8vh;
-  margin: 1vh;
+  margin: 0.5vh 1vh;
 }
 
 .alignItemsCenter {
@@ -229,6 +239,15 @@ footer {
   margin-left: 20%;
   margin-right: 20%;
 }
+
+.highlightedItem {
+  border: 0.25vh solid green;
+}
+
+span.highlightedItem {
+  padding: 0 0.25vh;
+}
+
 /*
  -- end own styles --
 */
