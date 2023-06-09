@@ -1,5 +1,3 @@
-// import templates from '../data/templates';
-
 const convertArrayToObject = (templatesFromServer) => 
 templatesFromServer.reduce(
     (accumulator, currentValue) => {
