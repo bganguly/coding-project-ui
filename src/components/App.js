@@ -3,7 +3,8 @@ import TitleContainer from './TitleContainer';
 import LargeImageContainer from './LargeImageContainer';
 import ControlsContainer from './ControlsContainer';
 import ThumbnailImageContainer from './ThumbnailImageContainer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const App = () => {
   const numberOfThumbNails = 4;
@@ -13,6 +14,29 @@ const App = () => {
   const [thumbNailsToShow, SetThumbNailsToShow]  = useState(thumbnailArray);
   const [indexOfFirstThumbnail, SetIndexOfFirstThumbnail] = useState(0);
   const [highlightedItem, SetHighlightedItem] = useState(thumbnailArray[0]);
+
+  // const [templatesFromServer, SetTemplatesFromServer] = useEffect(
+  //   axios.get("http://localhost:3001/data/extendedTemplate.json").then((response) => {
+  //     SetTemplatesFromServer(response.data );
+  //   })
+  // , []);
+  
+  const url = 'http://localhost:3001/data/extendedTemplate.json';
+  // axios(url, {
+  //   method: 'GET',
+  //   // mode: 'no-cors',
+  //   headers: {
+  //     'Access-Control-Allow-Origin': '*',
+  //     'Content-Type': 'application/json',
+  //   },
+  //   // withCredentials: false,
+  //   // credentials: 'same-origin',
+  // }).then(response => {
+  // });
+
+    axios.get(url).then((response) => {
+      // SetTemplatesFromServer(response.data );
+    }, error => {console.log(error)})
 
   const handlePreviousBtnClick = () => {
     let prevIndex = indexOfFirstThumbnail;
