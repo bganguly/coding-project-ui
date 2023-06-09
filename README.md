@@ -2,7 +2,7 @@
 
 This project requires you to develop a website template viewer. See details in [README.md in master branch](https://github.com/bganguly/siemens-coding-project/tree/master#readme) 
 
-This specific branch relies on /GETs on a locahost express app running on port 5001 to fetch assets (images and templates.json).
+This specific branch relies on /GETs on a locahost express app running on port 3001 to fetch assets (images and templates.json).
 
 To run:
 ```
