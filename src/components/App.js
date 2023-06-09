@@ -14,30 +14,14 @@ const App = () => {
   const [thumbNailsToShow, SetThumbNailsToShow]  = useState(thumbnailArray);
   const [indexOfFirstThumbnail, SetIndexOfFirstThumbnail] = useState(0);
   const [highlightedItem, SetHighlightedItem] = useState(thumbnailArray[0]);
+  const [templatesFromServer, SetTemplatesFromServer] = useState(null);
 
-  // const [templatesFromServer, SetTemplatesFromServer] = useEffect(
-  //   axios.get("http://localhost:3001/data/extendedTemplate.json").then((response) => {
-  //     SetTemplatesFromServer(response.data );
-  //   })
-  // , []);
+  useEffect(() => {
+    axios.get("http://localhost:3001/data/templates.json").then((response) => {
+      SetTemplatesFromServer(response.data );
+    })
+  }, []);
   
-  const url = 'http://localhost:3001/data/extendedTemplate.json';
-  // axios(url, {
-  //   method: 'GET',
-  //   // mode: 'no-cors',
-  //   headers: {
-  //     'Access-Control-Allow-Origin': '*',
-  //     'Content-Type': 'application/json',
-  //   },
-  //   // withCredentials: false,
-  //   // credentials: 'same-origin',
-  // }).then(response => {
-  // });
-
-    axios.get(url).then((response) => {
-      // SetTemplatesFromServer(response.data );
-    }, error => {console.log(error)})
-
   const handlePreviousBtnClick = () => {
     let prevIndex = indexOfFirstThumbnail;
     if (prevIndex >= numberOfThumbNails) {
@@ -62,12 +46,16 @@ const App = () => {
   }
 
   return  (
-    <div className='flexDirectionCol'>
-      <TitleContainer />
-      <LargeImageContainer largeImageToShow={largeImageToShow}/>
-      <ControlsContainer handlePreviousBtnClick={handlePreviousBtnClick} handleNextBtnClick ={handleNextBtnClick}/>
-      <ThumbnailImageContainer highlightedItem={highlightedItem} handleThumbnailClick={handleThumbnailClick} thumbNailsToShow={[...thumbNailsToShow]} numberOfThumbNails={numberOfThumbNails} />
-    </ div>
+    <>
+    {templatesFromServer && 
+        <div className='flexDirectionCol'>
+          <TitleContainer />
+          <LargeImageContainer largeImageToShow={largeImageToShow} templatesFromServer={templatesFromServer}/>
+          <ControlsContainer handlePreviousBtnClick={handlePreviousBtnClick} handleNextBtnClick ={handleNextBtnClick}/>
+          <ThumbnailImageContainer highlightedItem={highlightedItem} handleThumbnailClick={handleThumbnailClick}       thumbNailsToShow={[...thumbNailsToShow]} numberOfThumbNails={numberOfThumbNails} />
+        </ div>
+    }
+    </>
   )
 }
 

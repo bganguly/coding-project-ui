@@ -1,9 +1,8 @@
 import React from 'react';
-import convertArrayToJson from '../utils/ConvertArrayToJson';
+import convertArrayToObject from '../utils/ConvertArrayToObject';
 
-
-const LargeImageMetadata = ({largeImageToShow}) => {
-  const allMetadata = convertArrayToJson();
+const LargeImageMetadata = ({largeImageToShow, templatesFromServer}) => {
+  const allMetadata = convertArrayToObject(templatesFromServer);
   const metadataById = allMetadata[largeImageToShow.slice(0,4)];
 
   return  ( 

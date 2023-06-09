@@ -1,7 +1,7 @@
-import templates from '../data/templates';
+// import templates from '../data/templates';
 
-const convertArrayToJson = () => 
-  templates.reduce(
+const convertArrayToObject = (templatesFromServer) => 
+templatesFromServer.reduce(
     (accumulator, currentValue) => {
       return Object.assign(accumulator, {
         [currentValue.id]:   {
@@ -16,4 +16,4 @@ const convertArrayToJson = () =>
   )
 
 
-export default convertArrayToJson
+export default convertArrayToObject
