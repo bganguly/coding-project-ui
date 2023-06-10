@@ -2,7 +2,8 @@
 
 This project requires us to develop a website template viewer. See details in [README.md in master branch](https://github.com/bganguly/siemens-coding-project/tree/master#readme) 
 
-This specific branch is an SPA with just the js/styles for it to render, but relies on /GETs on a locahost express app running on port 3001 to fetch other assets (images and templates.json). The express app is runnable via checking out the [branch_03_backend branch](https://github.com/bganguly/siemens-coding-project/tree/branch_03_backend). More instructions follow.
+This specific branch is an SPA with just the js/styles for it to render, but relies on /GETs on a separate freestanding locahost express app running on port 3001 to fetch other assets (images and templates.json have been moved out from this branch to the branch_03_backend). 
+The express app is runnable via checking out the [branch_03_backend branch](https://github.com/bganguly/siemens-coding-project/tree/branch_03_backend). More instructions follow.
 
 To run:
 ```
