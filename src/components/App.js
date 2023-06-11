@@ -8,6 +8,7 @@ import axios from 'axios';
 
 const App = () => {
   const numberOfThumbNails = 4;
+  //#TODO: this is not a complete enumeration of the images array - but can be easily expanded
   const largeImageArray = ['7111-b','7112-b','7118-b','7124-b','7130-b'];
   const [largeImageToShow, SetLargeImageToShow]  = useState(largeImageArray[0]);
   const thumbnailArray = ['7111-m','7112-m','7118-m','7124-m','7130-m'];
