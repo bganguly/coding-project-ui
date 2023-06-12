@@ -1,4 +1,4 @@
-# README for branch_03 #
+# README for branch_04 #
 
 This project requires us to develop a website template viewer. See details in [README.md in master branch](https://github.com/bganguly/coding-project-ui/tree/master#readme) 
 
