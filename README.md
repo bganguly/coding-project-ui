@@ -10,12 +10,12 @@ More instructions follow.
 To run:
 ```
 // startup the express server first
-// git clone and checkout the branch_03_backend branch , thereafter
+// git clone and checkout the backend branch_03 branch , thereafter
 rm -rf package-lock.json ; rm -rf node-modules/ ; npm i
 npm start
 
 // bring up the React app next
-// git clone and checkout this current branch_03_ui branch, thereafter
+// git clone and checkout this current branch_03 branch, thereafter
 rm -rf package-lock.json ; rm -rf node-modules/ ; npm i
 npm start
 ```
