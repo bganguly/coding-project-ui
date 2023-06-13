@@ -1,9 +1,11 @@
 # README for branch_03 #
 
-This project requires us to develop a website template viewer. See details in [README.md in master branch](https://github.com/bganguly/coding-project-ui/tree/master#readme) 
+This project requires us to develop a website template viewer. See details in [README.md in master branch](https://github.com/bganguly/website-template-viewer-ui/tree/master#readme) 
 
-This specific branch is an SPA with just the js/styles for it to render, but relies on /GETs on a separate freestanding locahost express app running on port 3001 to fetch other assets (images and templates.json have been moved out from this branch to the branch_03_backend).  
-The express app is runnable via checking out the [branch_03_backend branch](https://github.com/bganguly/coding-project-backend/tree/branch_03_backend). More instructions follow.  
+This specific branch builds on top of branch_02 and provides state management via hooks in addition to appropriate js/styles for it to render.  
+It also relies on /GETs on a separate freestanding locahost express app running on port 3001 to fetch other assets (images and templates.json have been moved out from this branch to the branch_03_backend).  
+The express app is runnable via checking out the [backend branch branch_03](https://github.com/bganguly/website-template-viewer-backend).  
+More instructions follow.  
 
 To run:
 ```
