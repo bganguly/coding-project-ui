@@ -1,8 +1,8 @@
 # README for branch_02 #
 
-This project requires us to develop a website template viewer. See details in [README.md in master branch](https://github.com/bganguly/coding-project-ui/tree/master#readme) 
+This project requires us to develop a website template viewer. See details in [README.md in master branch](https://github.com/bganguly/website-template-viewer-ui/tree/master#readme) 
 
-This specific branch puts in basic state management to work as a React SPA - using assets/images embedded in source. There is no backend.
+This specific branch builds on top of branch_01 and puts in basic state management to work as a React SPA - using assets/images embedded in source. There is no backend.
 
 To run:
 ```
