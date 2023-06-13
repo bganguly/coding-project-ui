@@ -1,10 +1,10 @@
 # README for branch_01 #
 
-This project requires us to develop a website template viewer. See details in [README.md in master branch](https://github.com/bganguly/coding-project-ui/tree/master#readme) 
+This project requires us to develop a website template viewer. See details in [README.md in master branch](https://github.com/bganguly/website-template-viewer-ui/tree/master#readme) 
 
-This specific branch is afirst pass and is  essentially just layout work using React components but no state management.  
+This specific branch is a very first pass and is essentially just layout work using React components but no state management.  
 Uses flex-box model heavily. There is no backend.  
-Subsequent branches eg brabch_02/branch_03.. etc built on each previous branch.
+Subsequent branches eg branch_02/branch_03.. etc build on each previous branch.
 
 To run:
 ```
